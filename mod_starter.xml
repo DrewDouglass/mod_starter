@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+    <name>Starter Module</name>
+    <author>Starter Author</author>
+    <version>1.0.0</version>
+    <description>A starter module for Joomla</description>
+    <files>
+        <filename>mod_starter.xml</filename>
+        <filename module="mod_starter">mod_starter.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <folder>tmpl</folder>
+    </files>
+    <config>
+		<fields name="params">
+			<fieldset label="Manage Slides" name="settings">		
+				<field name="fadeDuration" type="integer" label="Select fadeDuration" description="" first="1" last="9" step="1" default="1" />
+                <field name="mytextvalue" type="text" default="Some text" label="Enter some text" description="" size="10" />
+                <field name="test1" type="editor" label="Test Field" description="" width="300" filter="safehtml" />
+				<field name="slides_custom" type="Repeatable" icon="list" label="Manage the slides" description="Manage the slides.">
+					<fields name="params">
+						<fieldset name="slides_modal" repeat="true" label="Slides">
+							<field name="slideImage" type="media" directory="images/bgslides" description="Select the slide image." />
+						</fieldset>
+					</fields>
+				</field>	
+			</fieldset>
+		</fields>
+    </config>
+</extension>
